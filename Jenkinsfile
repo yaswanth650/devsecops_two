@@ -22,13 +22,6 @@ pipeline {
 	    }
 	    }
 	    
-
-	  stage ('Build') {
-            steps {
-                sh 'mvn clean package'
-            }
-        }    
-	    
 	stage ('Source-Composition-Analysis') {
 		steps {
 		     sh 'rm owasp-* || true'
@@ -47,6 +40,11 @@ pipeline {
 		       }
 		}
 	}
+	  stage ('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }    
        stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['tomcat']) {
