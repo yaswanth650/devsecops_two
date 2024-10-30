@@ -16,6 +16,12 @@
     </dependency>
   </dependencies>
   <build>
+    <plugins>
+      <plugin>
+         <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.0</version>
+      </plugin>
+      </plugins>
     <finalName>devsecops_two</finalName>
   </build>
 </project>
